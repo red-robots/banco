@@ -22,7 +22,7 @@ div {
 .clear {*zoom: 1;}
 body,
 html {
-    height: 100%;
+    min-height: 100%;
     position: relative;
 }
 body {
@@ -211,13 +211,54 @@ body {
     justify-content: center;
     align-items: center;
 }
-
-.triangle-bg1 {
-    background-image: linear-gradient(to left top, black 0%, black 50%, transparent 50%);
+.trbg {
     position: absolute;
     width: 100%;
-    height: 70%;
     bottom: 0;
+}
+.triangle-bg1 {
+    background-image: linear-gradient(to left top, #e8e7e7 0%, #e8e7e7 50%, transparent 50%);
+    height: 70%;
     right: 0;
-    opacity: .06;
+    z-index: 6;
+}
+.triangle-bg2 {
+    overflow: hidden;
+    height: 50%;
+    z-index: 5;
+    .slope {
+        width: 120%;
+        height: 200%;
+        position: relative;
+        background: #f6f6f6;
+        transform:rotate(4deg);
+        left: -15%;
+        top: 90px;
+    }
+}
+.triangle-bg3 {
+    z-index: 4;
+    height: 80%;
+    overflow: hidden;
+    .slope {
+        width: 120%;
+        height: 200%;
+        position: relative;
+        background: -moz-linear-gradient(top, rgba(246,246,246,0.65) 0%, rgba(255,255,255,0.33) 50%, rgba(255,255,255,0) 100%);
+        background: -webkit-linear-gradient(top, rgba(246,246,246,0.65) 0%,rgba(255,255,255,0.33) 50%,rgba(255,255,255,0) 100%);
+        background: linear-gradient(to bottom, rgba(246,246,246,0.65) 0%,rgba(255,255,255,0.33) 50%,rgba(255,255,255,0) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6f6f6f6', endColorstr='#00ffffff',GradientType=0 );
+        transform:rotate(4deg);
+        left: -15%;
+        top: 90px;
+    }
+}
+.bottombg {
+    width: 100%;
+    height: 20%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #e8e7e7;
+    z-index: 1;
 }

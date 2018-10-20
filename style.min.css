@@ -1798,7 +1798,7 @@ div{overflow-wrap:break-word;word-wrap:break-word;-ms-word-break:break-all;word-
 .clear:before,.clear:after{content:" ";display:table}
 .clear:after{clear:both}
 .clear{*zoom:1}
-body,html{height:100%;position:relative}
+body,html{min-height:100%;position:relative}
 body{background:#FFF;font-family:'Poppins',sans-serif;font-weight:400;font-size:15px;line-height:1.4}
 .site{position:relative;z-index:10;overflow:hidden}
 .wrapper{width:100%;margin:0 auto;padding:0}
@@ -1834,7 +1834,13 @@ body{background:#FFF;font-family:'Poppins',sans-serif;font-weight:400;font-size:
 .btn-style2:hover:before{opacity:1;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);z-index:2}
 .btn-style2 span{position:relative;z-index:10}
 .flexbox{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center}
-.triangle-bg1{background-image:-webkit-linear-gradient(right bottom,black 0,black 50%,transparent 50%);background-image:linear-gradient(to left top,black 0,black 50%,transparent 50%);position:absolute;width:100%;height:70%;bottom:0;right:0;opacity:.06}
+.trbg{position:absolute;width:100%;bottom:0}
+.triangle-bg1{background-image:-webkit-linear-gradient(right bottom,#e8e7e7 0,#e8e7e7 50%,transparent 50%);background-image:linear-gradient(to left top,#e8e7e7 0,#e8e7e7 50%,transparent 50%);height:70%;right:0;z-index:6}
+.triangle-bg2{overflow:hidden;height:50%;z-index:5}
+.triangle-bg2 .slope{width:120%;height:200%;position:relative;background:#f6f6f6;-webkit-transform:rotate(4deg);-ms-transform:rotate(4deg);transform:rotate(4deg);left:-15%;top:90px}
+.triangle-bg3{z-index:4;height:80%;overflow:hidden}
+.triangle-bg3 .slope{width:120%;height:200%;position:relative;background:-webkit-linear-gradient(top,rgba(246,246,246,0.65) 0,rgba(255,255,255,0.33) 50%,rgba(255,255,255,0) 100%);background:linear-gradient(to bottom,rgba(246,246,246,0.65) 0,rgba(255,255,255,0.33) 50%,rgba(255,255,255,0) 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#a6f6f6f6',endColorstr='#00ffffff',GradientType=0);-webkit-transform:rotate(4deg);-ms-transform:rotate(4deg);transform:rotate(4deg);left:-15%;top:90px}
+.bottombg{width:100%;height:20%;position:fixed;bottom:0;left:0;background:#e8e7e7;z-index:1}
 .plus-minus-toggle{cursor:pointer;height:21px;position:absolute;width:21px;left:-10px;top:40%;z-index:2}
 .plus-minus-toggle:before,.plus-minus-toggle:after{background:#eee;content:'';height:5px;left:0;position:absolute;top:0;width:21px;-webkit-transition:-webkit-transform 500ms ease;transition:-webkit-transform 500ms ease;transition:transform 500ms ease;transition:transform 500ms ease,-webkit-transform 500ms ease}
 .plus-minus-toggle:after{-webkit-transform-origin:center;-ms-transform-origin:center;transform-origin:center}
@@ -1867,7 +1873,7 @@ body{background:#FFF;font-family:'Poppins',sans-serif;font-weight:400;font-size:
 .feat-content .cta-button.btn2.btn-style2:hover:before{background:#FFF}
 @media screen and (min-width:768px){.feat-content .cta-button.btn2{float:right}
 }.feat-content .cta-button.btn-style1:before{background:#FFF}
-.feat-content .cta-button:hover{color:#1a2133}
+.feat-content .cta-button:hover{color:#192031}
 .appurl,.cta-button-div{text-align:center;width:70%;margin:0 auto;position:relative}
 @media screen and (min-width:768px){.appurl,.cta-button-div{width:95%;left:-2%}
 }.appurl a{text-decoration:none;outline:0;display:inline-block;width:70%}
@@ -1876,7 +1882,12 @@ body{background:#FFF;font-family:'Poppins',sans-serif;font-weight:400;font-size:
 @media screen and (min-width:768px){.appurl .btnwrap{margin-top:40px}
 .appurl .btnwrap.b2{float:right}
 }@media screen and (min-width:1200px){.appurl .btnwrap{width:50%}
-}.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
+}.midcontent .titlediv h2,.midcontent .titlediv h3{font-weight:600;text-align:center;line-height:1.2}
+.midcontent .titlediv h2{color:#8bc53f;font-size:25px}
+.midcontent .titlediv h3{color:#192031;font-size:27px}
+.midcontent .columns.three .column{width:33.3333333%}
+.midcontent .columns .column .pad{padding-left:20px;padding-right:20px}
+.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}
 .infinite-scroll .posts-navigation,.infinite-scroll.neverending .site-footer{display:none}

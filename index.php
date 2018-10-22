@@ -73,7 +73,7 @@ $apple_store_url = get_field('apple_store_url',$home_post_id);
 <div class="midcontent clear container">    
     <div class="titlediv">
         <h2 class="section-title">Difference Of Our Services</h2>
-        <h3 class="mid-title">
+        <h3 class="mid-title wow fadeIn">
             Benefits you can get<br>
             Through registering today!
         </h3>
@@ -112,12 +112,13 @@ $apple_store_url = get_field('apple_store_url',$home_post_id);
         
         ?>
         <div class="columns clear <?php echo $colClass?>">
-            <?php foreach($columns_content as $arr) { 
+            <?php $ctr=1; foreach($columns_content as $arr) { 
                 $c_title = $arr['column_title'];
                 $c_text = $arr['column_text'];
                 $c_icon = $arr['column_icon'];
+                $delay = $ctr*2;
             ?>
-            <div class="column">
+            <div class="column fadeInUp wow" data-wow-delay="0.<?php echo $delay;?>s">
                 <div class="pad clear">
                     <div class="icon">
                         <?php if( $c_icon ) { ?>
@@ -134,7 +135,7 @@ $apple_store_url = get_field('apple_store_url',$home_post_id);
                     <?php } ?>
                 </div>    
             </div>
-            <?php } ?>
+            <?php $ctr++; } ?>
         </div>
     <?php } ?>
     
@@ -144,13 +145,17 @@ $apple_store_url = get_field('apple_store_url',$home_post_id);
     
 </div>
 
-<div class="midcontent clear container">    
-    <div class="titlediv">
-        <h2 class="section-title">Join the family</h2>
+<div class="midcontent clear container join-family">  
+    
+    <div class="top-content clear fadeInUp wow" data-wow-delay="0.5s">
+        <div class="titlediv">
+            <h2 class="section-title">Join the family</h2>
+        </div>
+        <div class="textcontent">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fringilla, nulla nec laoreet rutrum, augue tellus ultrices augue, sit amet vulputate tortor nisi eget mauris. Nam commodo eget leo blandit varius. Nunc laoreet justo eu felis ornare, gravida ultrices neque porttitor. Pellentesque accumsan, tellus vel ornare mollis, risus nunc.</p>
+        </div>
     </div>
-    <div class="textcontent">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fringilla, nulla nec laoreet rutrum, augue tellus ultrices augue, sit amet vulputate tortor nisi eget mauris. Nam commodo eget leo blandit varius. Nunc laoreet justo eu felis ornare, gravida ultrices neque porttitor. Pellentesque accumsan, tellus vel ornare mollis, risus nunc.</p>
-    </div>
+    
     
     <?php
     $articles[] = array(
@@ -171,22 +176,45 @@ $apple_store_url = get_field('apple_store_url',$home_post_id);
         <?php $j=1; foreach($articles as $a) { 
             $a_title = $a['article_title'];
             $a_text = $a['article_content'];
-            $a_img = $a['article_image'];
+            $a_img = $a['article_image']; 
+            $delay = $j*2;
             ?>
-            <div class="a-column <?php echo ($j % 2 == 0) ? 'even':'odd';  ?>">
+            <div class="a-column wow fadeIn <?php echo ($j % 2 == 0) ? 'even':'odd';  ?>" data-wow-delay="0.<?php echo $delay;?>s">
                 <div class="photo">
-                    <div class="image"><img src="<?php echo $a_img;?>" alt="" /></div>
+                    <?php if($a_img) { ?>
+                        <div class="image has-image" style="background-image:url('<?php echo $a_img;?>')"></div>
+                    <?php } else { ?>
+                        <div class="image no-image"></div>
+                    <?php } ?>
                 </div>
                 <div class="text">
                     <div class="pad clear">
                         <h3 class="col-title"><?php echo $a_title;?></h3>
                         <?php echo $a_text; ?>
+                        <div class="buttondiv">
+                            <a href="#" class="theme-btn btn-style2"><span>Learn More</span></a>
+                        </div>
                     </div>
                 </div>
             </div>
         <?php $j++; } ?>
     </div>
     <?php } ?>
+</div>
+
+<div class="why-us-div clear wrapper">
+    <div class="bg"></div>
+    <div class="section-content">
+        <div class="container clear wow fadeInRight">
+            <div class="titlediv">
+                <h3>WHY<br>BAN<span>CO?</span></h3>
+            </div>
+            <div class="text">
+                <p>Lorem ipsum nunc vitae accumsan ultricies vulputate orci pulvinar, eleifend vel rhoncus velit curae phasellus dictum tincidunt, pharetra quis elit ipsum vestibulum justo laoreet ut purus augue turpis vulputate ornare a tristique egestas.Etiam donec luctus eget cras commodo sit curabitur eleifend taciti, sodales litora.</p>
+                <p>Sem quisque class ligula facilisis est ultrices consequat netus torquent, suspendisse taciti bibendum varius eros per etiam semper accumsan eu, ornare egestas diam ultrices pellentesque faucibus ac lacinia. Aliquet accumsan curae nibh porttitor tellus luctus hac, phasellus.</p>
+            </div>
+        </div>
+    </div>
 </div>
 
 <?php

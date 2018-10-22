@@ -246,6 +246,7 @@
     }
     .col-title {
         font-size:1.3em;
+        margin-bottom: 0.5em;
     }
     .columns {
         margin-bottom: 30px;
@@ -291,21 +292,390 @@
         float: left;
         margin-bottom: 50px;
         .photo {
-            width: 30%;
+            width: 100%;
             float: left;
+            @media screen and (min-width: $tabwidth) {
+                width: 30%;
+            }
+        }
+        .image {
+            overflow: hidden;
+            float: none;
+            max-width: 288px;
+            width: 100%;
+            height: 300px;
+            background-position: top center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            box-shadow: 7px 7px 27px -5px rgba(0,0,0,0.33);
+            margin: 0 auto;
+            @media screen and (min-width: $tabwidth) {
+                height: 300px;
+                float: left;
+                max-width: 100%;
+            }
+            img {
+                width: 100%;
+                height: auto;
+                float: left;
+            }
         }
         .text {
-            width: 70%;
+            width: 100%;
             float: left;
             .pad {
-                padding: 20px 40px;
+                padding: 20px 0;
+            }
+            @media screen and (min-width: $tabwidth) {
+                width: 70%;
+                .pad {
+                    padding: 20px 50px;
+                }
             }
         }
         &.even {
-            .photo {
-                float: right;
+            @media screen and (min-width: $tabwidth) {
+                .photo {
+                    float: right;
+                }
+            }
+        }
+    }
+    
+    &.join-family {
+        padding-bottom: 20px;
+        @media screen and (min-width: $tabwidth) {
+            padding-bottom: 50px;
+        }
+    }
+}
+.article-columns {
+    margin-top: 5em;
+    .buttondiv {
+        margin-top:1.5em;
+    }
+}
+.why-us-div {
+    overflow: hidden;
+    position: relative;
+    height: 650px;
+    z-index: 10;
+    @media screen and (min-width: $tabwidth) {
+    }
+    .bg {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-image: url('images/bottom-bg.png');
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        background-attachment: scroll;
+        width: 100%;
+        height: 100%;
+    }
+    .section-content {
+        position: absolute;
+        z-index: 10;
+        color: #FFF;
+        width: 100%;
+        top: 65%;
+        transform: translateY(-65%);
+    }
+    .text {
+        float: right;
+        width: 100%;
+        box-sizing: border-box;
+        hyphens: none;
+        text-align: left;
+        font-size: .85rem;
+        @media screen and (min-width: $tabwidth) {
+            float: left;
+            text-align: right;
+            width: 70%;
+            padding-right: 10px;
+            font-size:15px;
+        }
+        p {
+            margin-top: 0;
+            margin-bottom: 1.5em;
+        }
+    }
+    .titlediv {
+        float: left;
+        width: 100%;
+        @media screen and (min-width: $tabwidth) {
+            float: right;
+            width: 30%;
+        }
+        h3 {
+            margin: 0 0 .5em;
+            color:#FFF;
+            line-height: .85;
+            font: {
+                size: 40px;
+                weight:700;
+            }
+            span {
+                color:$color-green;
+            }
+            @media screen and (min-width: $tabwidth) {
+                font-size:80px;
+                span {
+                    display: block;
+                    clear:both;
+                }
+            }
+        }
+    }
+}
+.footer {
+    .leftcol,
+    .rightcol {
+        float: left;
+        margin-bottom: 1.5em;
+        text-align: center;
+        @media screen and (min-width: $tabwidth) {
+            margin-bottom: 0;
+            text-align: left;
+        }
+    }
+    .leftcol {
+        width: 100%;
+        @media screen and (min-width: $tabwidth) {
+            width: 40%;
+        }
+    }
+    .rightcol {
+        width: 100%;
+        @media screen and (min-width: $tabwidth) {
+            width: 60%;
+        }
+    }
+    .widget-title {
+        margin-top: 0;
+        margin-bottom: 5px;
+        font-size: 23px;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+    .frow.bottom {
+        margin-top: 15px;
+        @media screen and (min-width: $tabwidth) {
+            margin-top: 30px;
+        }
+    }
+    .rightcol .widget-content {
+        font-weight: 300;
+        p {
+            margin-top: 0;
+            margin-bottom: 1em;
+        }
+    }
+    .branding {
+        text-align: center;
+        a {
+            display: inline-block;
+            max-width: 200px;
+            width: 100%;
+            @media screen and (min-width: $tabwidth) {
+                float: left;
+            }
+        }
+        img {
+            float: left;
+            width: 100%;
+            height: auto;
+        }
+        @media screen and (min-width: $tabwidth) {
+            text-align: left;
+        }
+    }
+}
+.subscribe-form {
+    position: relative;
+    margin-top:1em;
+    @media screen and (min-width: $tabwidth) {
+        margin-top: 0;
+    }
+    form {
+        display: block;
+        width: 100%;
+        position: relative;
+        margin: 0 0;
+    }
+    .field {
+        position: relative;
+        width: 100%;
+        .icon {
+            position: absolute;
+            top: 6px;
+            left: 25px;
+            z-index: 3;
+            color: $color-green;
+            font-size: 30px;
+            width: 33px;
+            .st0{fill:#8CC540;}
+        }
+    }
+    input[type='text'],input[type='email'] {
+        width: 100%;
+        border: none;
+        background: #FFF;
+        line-height: 15px;
+        height: 20px;
+        padding: 25px 30px 22px 66px;
+        border-radius: 100px;
+        box-sizing: border-box;
+        box-shadow: none;
+        -webkit-appearance:none;
+        @include transition(all ease-out .2s);
+        outline: 0;
+        font-size:16px;
+        &:focus {
+            box-shadow: 0px 0px 12px 0px rgba(178,233,107,.8);
+        }
+    }
+    input[type='submit'] {
+        display: none;
+    }
+    button {
+        text-shadow: none;
+        box-shadow: none;
+        -webkit-appearance:none;
+        border: none;
+        background: $color-green;
+        position: absolute;
+        top: 0;
+        right: -2px;
+        z-index: 5;
+        height: 47px;
+        line-height: 47px;
+        box-sizing: border-box;
+        font-weight: 700;
+        font-size: 15px;
+        text-transform: uppercase;
+        padding: 0 20px;
+        &:hover {
+            color:#FFF;
+            &:before {
+                background: #5f8c25;
+            }
+        }
+        @media screen and (min-width: $tabwidth) {
+            padding: 0 40px;
+        }
+    }
+    .note {
+        font-size: 13px;
+        font-weight: 300;
+        padding-top: 7px;
+        @media screen and (min-width: $tabwidth) {
+            padding-left: 10px;
+        }
+    }
+}
+
+.categoriesdiv {
+    ul {
+        margin: 0 0;
+        padding: 0 0;
+        list-style: none;
+        a {
+            display: inline-block;
+            text-decoration: none;
+            color:#FFF;
+            text-transform: uppercase;
+            padding:2px 0;
+            font:{
+                size:12px;
+                weight:300;
+            }
+            @include transition(all ease-out .2s);
+            &:hover {
+                color:$color-green;
+            }
+        }
+    }
+}
+.footer-info {
+    width: 100%;
+    float: left;
+    text-align: center;
+    .copyright {
+        font: {
+            size: 12px;
+            weight: 300;
+        }
+        opacity: 0.85;
+    }   
+    .ctxt {
+        position: relative;
+        padding-left: 10px;
+        padding-right: 7px;
+        &:before {
+            content:"";
+            display: block;
+            width: 1px;
+            height: 13px;
+            background: #FFF;
+            position: absolute;
+            top: 2px;
+            left: 0;
+        }
+        &.first {
+            &:before {
+                display: none;
             }
         }
     }
 }
 
+.foot-menu {
+    margin-top: 30px;
+    @media screen and (min-width: $tabwidth) {
+        margin-top: 50px;
+    }
+    ul {
+        display: inline-block;
+        margin: 0 0;
+        padding: 0 0;
+        list-style: none;
+        ul {
+            display: none;
+        }
+    }
+    li {
+        float: left;
+        position: relative;
+        &:before {
+            content: "";
+            display: block;
+            width: 2px;
+            height: 16px;
+            background: $color-green;
+            position: absolute;
+            top: 3px;
+            left: 0;
+        }
+        &:first-child {
+            &:before {
+                display: none;
+            }
+        }
+    }
+    a {
+        text-decoration: none;
+        color:$color-green;
+        font:{
+            size:13px;
+            weight:500;
+        }
+        letter-spacing: 1px;
+        padding-left: 10px;
+        padding-right: 7px;
+        @include transition(all ease-out .2s);
+        &:hover {
+            color:#FFF;
+        }
+    }
+}

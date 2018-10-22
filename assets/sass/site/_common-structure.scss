@@ -22,7 +22,6 @@ div {
 .clear {*zoom: 1;}
 body,
 html {
-    min-height: 100%;
     position: relative;
 }
 body {
@@ -34,8 +33,15 @@ body {
 }
 .site {
     position: relative;
-    z-index: 10;
     overflow: hidden;
+    z-index: 10;
+    @media screen and (min-width: $tabwidth) {
+         min-height: 800px;
+    }
+}
+.site-content-wrap {
+    position: relative;
+    z-index: 10;
 }
 .wrapper {
 	width: 100%;
@@ -174,9 +180,16 @@ body {
         z-index: 10;
     }
 }
+.btn,input[type="submit"],button.btn,.theme-btn,
 .btn-style2 {
+    display: inline-block;
     overflow: hidden;
     position: relative;
+    box-sizing: border-box;
+    text-decoration: none;
+    -webkit-appearance:none;
+    outline:none;
+    @include transition(all ease-out .3s);
     &:before {
         content: '';
         position: absolute;
@@ -184,7 +197,7 @@ body {
         left: 0;
         width: 100%;
         height: 100%;
-        background: #37474f;
+        background: #FFF;
         z-index: -1;
         opacity: 0;
         transform: scale3d(0.6, 1, 1);
@@ -192,6 +205,7 @@ body {
         transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
     }
     &:hover {
+        color:$color-dark-blue;
         &:before {
             opacity: 1;
             transform: translate3d(0, 0, 0);
@@ -203,6 +217,17 @@ body {
         z-index: 10;
     }
 }
+
+.btn,input[type="submit"],button.btn,.theme-btn {
+    background: $color-green;
+    padding: 13px 25px 10px;
+    color: #FFF;
+    border-radius: 100px;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    font-weight: 500;
+}
+
 
 .flexbox {
     display: flex;
@@ -218,27 +243,27 @@ body {
 }
 .triangle-bg1 {
     background-image: linear-gradient(to left top, #e8e7e7 0%, #e8e7e7 50%, transparent 50%);
-    height: 70%;
+    height: 60%;
     right: 0;
     z-index: 6;
 }
 .triangle-bg2 {
     overflow: hidden;
-    height: 50%;
+    height: 40%;
     z-index: 5;
     .slope {
         width: 120%;
         height: 200%;
         position: relative;
         background: #f6f6f6;
-        transform:rotate(4deg);
+        transform:rotate(2deg);
         left: -15%;
         top: 90px;
     }
 }
 .triangle-bg3 {
     z-index: 4;
-    height: 80%;
+    height: 58%;
     overflow: hidden;
     .slope {
         width: 120%;
@@ -248,17 +273,11 @@ body {
         background: -webkit-linear-gradient(top, rgba(246,246,246,0.65) 0%,rgba(255,255,255,0.33) 50%,rgba(255,255,255,0) 100%);
         background: linear-gradient(to bottom, rgba(246,246,246,0.65) 0%,rgba(255,255,255,0.33) 50%,rgba(255,255,255,0) 100%);
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6f6f6f6', endColorstr='#00ffffff',GradientType=0 );
-        transform:rotate(4deg);
+        transform:rotate(6deg);
         left: -15%;
         top: 90px;
     }
 }
-.bottombg {
-    width: 100%;
-    height: 20%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    background: #e8e7e7;
-    z-index: 1;
+.text-center {
+    text-align: center;
 }

@@ -24,10 +24,9 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
-    <div class="triangle-bg1 trbg"></div>
-    <div class="triangle-bg2 trbg"><div class="slope"></div></div>
-    <div class="triangle-bg3 trbg"><div class="slope"></div></div>
-    <div class="bottombg"></div>
+<div class="triangle-bg1 trbg"></div>
+<div class="triangle-bg2 trbg"><div class="slope"></div></div>
+<div class="triangle-bg3 trbg"><div class="slope"></div></div>
 <?php wp_footer(); ?>
 
 </body>

@@ -36,31 +36,22 @@ $apple_store_url = get_field('apple_store_url',$home_post_id);
                 <?php } ?>
                 
                 <div class="cta-button-div clear">
-                    <?php if($button_1_text && $button_1_link) { ?>
-                    <a class="cta-button btn1 btn-style2" href="<?php echo $button_1_link;?>"><span><?php echo $button_1_text;?></span></a>
-                    <?php } ?>
-
-                    <?php if($button_2_text && $button_2_link) { ?>
-                    <a class="cta-button btn2 btn-style2" href="<?php echo $button_2_link;?>"><span><?php echo $button_2_text;?></span></a>
-                    <?php } ?>
+                    <a class="cta-button btn1 btn-style2" href="#"><span>TRY FOR FREE</span></a>
+                    <a class="cta-button btn2 btn-style2" href="#"><span>HOW IT WORKS</span></a>
                  </div>    
                 
                 <div class="appurl clear flexbox">
-                    <?php if( $google_play_url ) { ?>
                     <span class="btnwrap b1">
-                        <a href="<?php echo $google_play_url;?>" target="_blank">
+                        <a href="#" target="_blank">
                             <img src="<?php bloginfo('template_url'); ?>/images/btn_google.png" alt="Google Play">
                         </a>
                     </span>
-                    <?php } ?>
                     
-                    <?php if( $apple_store_url ) { ?>
                     <span class="btnwrap b2">
-                        <a href="<?php echo $apple_store_url;?>" target="_blank">
+                        <a href="#" target="_blank">
                             <img src="<?php bloginfo('template_url'); ?>/images/btn_apple.png" alt="Apple Store">
                         </a>
                     </span>
-                    <?php } ?>
                 </div>
             </div>
             <div class="home-feat-image col">
@@ -76,20 +67,39 @@ $apple_store_url = get_field('apple_store_url',$home_post_id);
 <?php
     $mid_content_title = get_field('mid_content_title',$home_post_id);
     $mid_content_subtitle = get_field('mid_content_subtitle',$home_post_id);
-    $columns_content = get_field('columns_content',$home_post_id);
+    //$columns_content = get_field('columns_content',$home_post_id);
 ?>
     
 <div class="midcontent clear container">    
     <div class="titlediv">
-        <?php if($mid_content_title) { ?>
-            <h2 class="mid-title"><?php echo $mid_content_title;?></h2>
-        <?php } ?>
-        <?php if($mid_content_subtitle) { ?>
-            <h3 class="mid-title"><?php echo $mid_content_subtitle;?></h3>
-        <?php } ?>
+        <h2 class="section-title">Difference Of Our Services</h2>
+        <h3 class="mid-title">
+            Benefits you can get<br>
+            Through registering today!
+        </h3>
     </div>
     
-    <?php if($columns_content) { 
+    <?php 
+    $columns_content[] = array(
+                'column_icon'   => get_bloginfo('template_url') . "/images/icons/01-icon.png",
+                'column_title'  => 'Maximise your duty refunds',
+                'column_text'   => '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fringilla, nulla nec laoreet rutrum, augue tellus ultrices augue, sit amet vulputate tortor nisi eget.</p>'
+            );
+    
+    $columns_content[] = array(
+                'column_icon'   => get_bloginfo('template_url') . "/images/icons/02-icon.png",
+                'column_title'  => 'Import data with interactive graphs',
+                'column_text'   => '<p>Neque donec vivamus mi malesuada ornare lobortis feugiat semper senectus fermentum per aliquet fermentum, velit dapibus euismod mi senectus potenti in vulputate iaculis.</p>'
+            );
+    
+    $columns_content[] = array(
+                'column_icon'   => get_bloginfo('template_url') . "/images/icons/03-icon.png",
+                'column_title'  => 'Your data is secure with us',
+                'column_text'   => '<p>Placerat risus eros gravida cubilia potenti metus class pellentesque lectus blandit, donec aptent fermentum condimentum interdum aliquam nulla consectetur</p>'
+            );
+    
+    
+    if($columns_content) { 
         $countCol = count($columns_content); 
         $colClass = 'three';
         if($countCol % 3 == 0)  {
@@ -101,7 +111,7 @@ $apple_store_url = get_field('apple_store_url',$home_post_id);
         }
         
         ?>
-        <div class="columns clear flexbox <?php echo $colClass?>">
+        <div class="columns clear <?php echo $colClass?>">
             <?php foreach($columns_content as $arr) { 
                 $c_title = $arr['column_title'];
                 $c_text = $arr['column_text'];
@@ -111,7 +121,7 @@ $apple_store_url = get_field('apple_store_url',$home_post_id);
                 <div class="pad clear">
                     <div class="icon">
                         <?php if( $c_icon ) { ?>
-                            <span class="iconImg"><img src="<?php echo $c_icon;?>" alt="" /></span>
+                            <span class="iconImg" style="background-image:url('<?php echo $c_icon;?>')"></span>
                         <?php } else { ?>
                             <span class="noIcon"></span>
                         <?php } ?>
@@ -128,8 +138,56 @@ $apple_store_url = get_field('apple_store_url',$home_post_id);
         </div>
     <?php } ?>
     
+    <div class="midbuttondiv text-center clear">
+        <a href="#" class="theme-btn btn-style2"><span>Register Now!</span></a>
+    </div>
+    
 </div>
 
+<div class="midcontent clear container">    
+    <div class="titlediv">
+        <h2 class="section-title">Join the family</h2>
+    </div>
+    <div class="textcontent">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fringilla, nulla nec laoreet rutrum, augue tellus ultrices augue, sit amet vulputate tortor nisi eget mauris. Nam commodo eget leo blandit varius. Nunc laoreet justo eu felis ornare, gravida ultrices neque porttitor. Pellentesque accumsan, tellus vel ornare mollis, risus nunc.</p>
+    </div>
+    
+    <?php
+    $articles[] = array(
+            'article_title'=>'Personal Identification 1',
+            'article_content'=>'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fringilla, nulla nec laoreet rutrum, augue tellus ultrices augue, sit amet vulputate tortor nisi eget mauris. Nam commodo eget leo blandit varius. Nunc laoreet justo eu felis ornare, gravida ultrices neque porttitor. Pellentesque accumsan, tellus vel ornare mollis.',
+            'article_image'=> get_bloginfo('template_url') . "/images/sample.png"
+        );
+
+    $articles[] = array(
+            'article_title'=>'Personal Identification 2',
+            'article_content'=>'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fringilla, nulla nec laoreet rutrum, augue tellus ultrices augue, sit amet vulputate tortor nisi eget mauris. Nam commodo eget leo blandit varius. Nunc laoreet justo eu felis ornare, gravida ultrices neque porttitor. Pellentesque accumsan, tellus vel ornare mollis.',
+            'article_image'=> get_bloginfo('template_url') . "/images/sample.png"
+        );
+    ?>
+    
+    <?php if($articles) { ?>
+    <div class="article-columns clear">
+        <?php $j=1; foreach($articles as $a) { 
+            $a_title = $a['article_title'];
+            $a_text = $a['article_content'];
+            $a_img = $a['article_image'];
+            ?>
+            <div class="a-column <?php echo ($j % 2 == 0) ? 'even':'odd';  ?>">
+                <div class="photo">
+                    <div class="image"><img src="<?php echo $a_img;?>" alt="" /></div>
+                </div>
+                <div class="text">
+                    <div class="pad clear">
+                        <h3 class="col-title"><?php echo $a_title;?></h3>
+                        <?php echo $a_text; ?>
+                    </div>
+                </div>
+            </div>
+        <?php $j++; } ?>
+    </div>
+    <?php } ?>
+</div>
 
 <?php
 get_footer();

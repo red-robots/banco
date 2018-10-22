@@ -26,24 +26,22 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'banco' ); ?></a>
+        <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'banco' ); ?></a>
+        <header id="masthead" class="site-header wrapper" role="banner">
+            <div class="container clear">
+                <div class="logo">
+                    <a href="<?php bloginfo('url'); ?>">
+                        <img src="<?php bloginfo('template_url'); ?>/images/logo.png" alt="<?php bloginfo('name'); ?>">
+                    </a>
+                </div>
 
-	<header id="masthead" class="site-header wrapper" role="banner">
-		<div class="container clear">
-			<div class="logo">
-                <a href="<?php bloginfo('url'); ?>">
-                    <img src="<?php bloginfo('template_url'); ?>/images/logo.png" alt="<?php bloginfo('name'); ?>">
-                </a>
-            </div>
-
-			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<button style="display:none!important;" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'MENU', 'banco' ); ?></button>
-				<span class="burger" id="mobile-menu">
-				  <span></span>
-				</span>
-                <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-			</nav><!-- #site-navigation -->
-	   </div><!-- container -->
-	</header><!-- #masthead -->
-
-	<div id="content" class="site-content wrapper">
+                <nav id="site-navigation" class="main-navigation" role="navigation">
+                    <button style="display:none!important;" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'MENU', 'banco' ); ?></button>
+                    <span class="burger" id="mobile-menu">
+                      <span></span>
+                    </span>
+                    <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+                </nav><!-- #site-navigation -->
+           </div><!-- container -->
+        </header><!-- #masthead -->
+        <div id="content" class="site-content wrapper">

@@ -231,17 +231,54 @@
         h2 {
             color:$color-green;
             font-size:25px;
+            margin-top:3em;
+            margin-bottom: 0;
         }
         h3 {
             color:$color-dark-blue;
             font-size:27px;
+            margin-top:1.5em;
         }
     }
-    
+    .mid-title {
+        margin-top: 0;
+        margin-bottom: 2em;
+    }
+    .col-title {
+        font-size:1.3em;
+    }
     .columns {
+        margin-bottom: 30px;
+        .icon {
+            text-align: center;
+            span {
+                display: inline-block;
+                width: 100%;
+                height: 90;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: left center;
+            }
+            @media screen and (min-width: $tabwidth) {
+                text-align: left;
+                span {
+                    height: 140px;
+                }
+            }
+        }
+        .column {
+            width: 100%;
+            float: left;
+            @media screen and (min-width: $tabwidth) {
+                width: 33.3333333%;
+            }
+        }
         &.three {
             .column {
-                width: 33.3333333%;
+                width: 100%;
+                @media screen and (min-width: $tabwidth) {
+                    width: 33.3333333%;
+                }
             }
         }
         .column .pad {
@@ -249,4 +286,26 @@
             padding-right: 20px;
         }
     }
+    .a-column {
+        width: 100%;
+        float: left;
+        margin-bottom: 50px;
+        .photo {
+            width: 30%;
+            float: left;
+        }
+        .text {
+            width: 70%;
+            float: left;
+            .pad {
+                padding: 20px 40px;
+            }
+        }
+        &.even {
+            .photo {
+                float: right;
+            }
+        }
+    }
 }
+

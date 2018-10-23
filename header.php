@@ -17,22 +17,28 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
 <script defer src="<?php bloginfo( 'template_url' ); ?>/assets/svg-with-js/js/fontawesome-all.js"></script>
-
-
+<?php 
+    //get_template_part('inc/customized_css'); 
+    $theme = get_theme_mod('color_options','navy_blue');
+    $logo = get_custom_logo();
+?>
 <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> data-theme="<?php echo $theme?>">
 <div id="page" class="site">
     <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'banco' ); ?></a>
     <header id="masthead" class="site-header wrapper" role="banner">
         <div class="container clear">
             <div class="logo">
-                <a href="<?php bloginfo('url'); ?>">
-                    <img src="<?php bloginfo('template_url'); ?>/images/logo.png" alt="<?php bloginfo('name'); ?>">
-                </a>
+                <?php if($logo) { ?>
+                    <?php echo $logo; ?>
+                <?php } else { ?>
+                    <a class="siteLogo" href="<?php bloginfo('url'); ?>">
+                        <span><?php bloginfo('name'); ?></span>
+                    </a>
+                <?php } ?>
             </div>
 
             <nav id="site-navigation" class="main-navigation" role="navigation">

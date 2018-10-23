@@ -66,10 +66,10 @@ function banco_setup() {
   // ) );
 
   // Set up the WordPress core custom background feature.
-  add_theme_support( 'custom-background', apply_filters( 'banco_custom_background_args', array(
-    'default-color' => 'ffffff',
-    'default-image' => '',
-  ) ) );
+//  add_theme_support( 'custom-background', apply_filters( 'banco_custom_background_args', array(
+//    'default-color' => 'ffffff',
+//    'default-image' => '',
+//  ) ) );
     
 
   // Add theme support for Custom Logo.
@@ -79,11 +79,18 @@ function banco_setup() {
     'flex-width'  => true,
     'flex-height' => true,
   ) );
+    
 
     
 }
 endif;
 add_action( 'after_setup_theme', 'banco_setup' );
+
+add_action( 'after_setup_theme', 'remove_option_customizer', 11 ); 
+function remove_option_customizer() {
+    // This will remove support for post thumbnails on ALL Post Types
+    remove_theme_support( 'custom-header' );
+}
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.

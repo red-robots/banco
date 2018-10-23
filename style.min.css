@@ -1680,7 +1680,7 @@ a:hover,a:active{outline:0}
 .main-navigation ul li:hover>ul,.main-navigation ul li.focus>ul{left:auto}
 .main-navigation ul li{float:left;position:relative}
 .main-navigation ul li>a{padding:10px 20px}
-.main-navigation a{color:#FFF;text-decoration:none;text-transform:uppercase;display:block}
+.main-navigation a{color:#FFF;text-decoration:none;text-transform:uppercase;display:block;-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
 .main-navigation a:hover{color:#8bc53f}
 .main-navigation .current_page_item>a,.main-navigation .current-menu-item>a,.main-navigation .current_page_ancestor>a,.main-navigation .current-menu-ancestor>a{color:#8bc53f}
 .menu-toggle,.main-navigation.toggled ul{display:block}
@@ -1818,9 +1818,11 @@ body{background:#FFF;font-family:'Poppins',sans-serif;font-weight:400;font-size:
 }@media screen and (min-width:1200px){}
 .logo{display:block;float:left;width:100%}
 @media screen and (min-width:768px){.logo{width:300px}
-}.logo a{display:block;width:180px;float:left}
+}.logo a{display:block;width:180px;float:left;text-decoration:none}
 @media screen and (min-width:768px){.logo a{width:300px}
 }.logo a img{width:100%;height:auto;float:left}
+.siteLogo{font-size:50px;font-weight:700;color:#000;text-transform:uppercase}
+.siteLogo:hover{color:#000}
 .site-footer{width:100%;clear:both;position:relative;z-index:15;background:#212121;color:#FFF;padding-top:40px;padding-bottom:40px}
 @media screen and (min-width:768px){.site-footer{padding-top:60px;padding-bottom:60px}
 }#masthead{position:relative;z-index:100;margin-top:30px}
@@ -1855,12 +1857,10 @@ body{background:#FFF;font-family:'Poppins',sans-serif;font-weight:400;font-size:
 .plus-minus-toggle.collapsed:after{-webkit-transform:rotate(90deg);-ms-transform:rotate(90deg);transform:rotate(90deg)}
 .plus-minus-toggle.collapsed:before{-webkit-transform:rotate(180deg);-ms-transform:rotate(180deg);transform:rotate(180deg)}
 .home-header{position:relative;max-width:100%;width:100%;height:100%}
-@media screen and (min-width:768px){.home-header{height:600px}
-}.home-header .bg{width:100%;height:100%;position:absolute;top:0}
-.home-header .bg div{width:100%;height:100%;background-image:url("images/home-header.png");background-repeat:no-repeat;background-position:top center;background-size:cover;margin:0 auto}
-@media screen and (min-width:1200px){.home-header .bg div{background-position:0 78%}
-}.feat-content{position:relative;z-index:5;margin-top:125px}
-@media screen and (min-width:768px){.feat-content{margin-top:190px}
+@media screen and (min-width:768px){.home-header{height:650px}
+}.home-header .shape-top{position:absolute;top:0;left:0;width:100%;height:100%;background-repeat:no-repeat;background-position:top center;background-size:cover}
+.feat-content{position:relative;z-index:5;margin-top:125px}
+@media screen and (min-width:768px){.feat-content{margin-top:205px}
 }.feat-content .home-feat-text{width:100%;float:left;margin-bottom:40px}
 @media screen and (min-width:768px){.feat-content .home-feat-text{width:40%;margin-bottom:0}
 }.feat-content .home-feat-image{width:100%;float:left}
@@ -1871,7 +1871,7 @@ body{background:#FFF;font-family:'Poppins',sans-serif;font-weight:400;font-size:
 }.feat-content .textwrap{color:#FFF;font-weight:300;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;margin-bottom:30px}
 .feat-content .textwrap h2{margin:0 0 4px;font-size:28px;font-weight:500}
 .feat-content .textwrap p{margin-top:0;margin-bottom:1em}
-.feat-content .cta-button{display:inline-block;text-decoration:none;text-transform:uppercase;color:#FFF;padding:10px 20px;border-radius:100px;overflow:hidden;width:90%;text-align:center;float:none;box-sizing:border-box;margin:0 auto 10px;-webkit-transition:all ease-out .2s;transition:all ease-out .2s}
+.feat-content .cta-button{display:inline-block;text-decoration:none;text-transform:uppercase;color:#FFF;padding:10px 20px 7px;border-radius:100px;overflow:hidden;width:90%;text-align:center;float:none;box-sizing:border-box;margin:0 auto 10px;-webkit-transition:all ease-out .2s;transition:all ease-out .2s}
 @media screen and (min-width:768px){.feat-content .cta-button{width:auto;font-size:1.6vw;float:left}
 }@media screen and (min-width:1200px){.feat-content .cta-button{font-size:15px;width:170px}
 }.feat-content .cta-button.btn1{background:#8bc53f;border:2px solid #8bc53f}
@@ -1921,7 +1921,8 @@ body{background:#FFF;font-family:'Poppins',sans-serif;font-weight:400;font-size:
 }.article-columns{margin-top:5em}
 .article-columns .buttondiv{margin-top:1.5em}
 .why-us-div{overflow:hidden;position:relative;height:650px;z-index:10}
-.why-us-div .bg{position:absolute;bottom:0;left:0;background-image:url("images/bottom-bg.png");background-repeat:no-repeat;background-position:bottom center;background-attachment:scroll;width:100%;height:100%}
+.why-us-div .bgwrap{position:absolute;bottom:0;left:0;width:100%;height:100%;-webkit-transform:scaleX(-1);-ms-transform:scaleX(-1);transform:scaleX(-1)}
+.why-us-div .shape-bottom{position:relative;background-repeat:no-repeat;background-position:bottom center;background-attachment:scroll;width:100%;height:100%;-webkit-transform:scaleY(-1);-ms-transform:scaleY(-1);transform:scaleY(-1)}
 .why-us-div .section-content{position:absolute;z-index:10;color:#FFF;width:100%;top:65%;-webkit-transform:translateY(-65%);-ms-transform:translateY(-65%);transform:translateY(-65%)}
 .why-us-div .text{float:right;width:100%;box-sizing:border-box;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;text-align:left;font-size:.85rem}
 @media screen and (min-width:768px){.why-us-div .text{float:left;text-align:right;width:70%;padding-right:10px;font-size:15px}
@@ -1959,7 +1960,7 @@ body{background:#FFF;font-family:'Poppins',sans-serif;font-weight:400;font-size:
 .subscribe-form input[type='submit']{display:none}
 .subscribe-form button{text-shadow:none;box-shadow:none;-webkit-appearance:none;border:0;background:#8bc53f;position:absolute;top:0;right:-2px;z-index:5;height:47px;line-height:47px;box-sizing:border-box;font-weight:700;font-size:15px;text-transform:uppercase;padding:0 20px}
 .subscribe-form button:hover{color:#FFF}
-.subscribe-form button:hover:before{background:#5f8c25}
+.subscribe-form button:hover:before{background:#000;opacity:.25}
 @media screen and (min-width:768px){.subscribe-form button{padding:0 40px}
 }.subscribe-form .note{font-size:13px;font-weight:300;padding-top:7px}
 @media screen and (min-width:768px){.subscribe-form .note{padding-left:10px}

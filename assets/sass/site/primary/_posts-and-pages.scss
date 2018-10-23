@@ -41,27 +41,18 @@
     width: 100%;
     height: 100%;
     @media screen and (min-width: $tabwidth) {
-        height: 600px;
+        height: 650px;
     }
-    .bg {
-        width: 100%;
-        height: 100%;
+    .shape-top {
         position: absolute;
         top: 0;
-        div {
-            width: 100%;
-            height: 100%;
-            background-image: url('images/home-header.png');
-            background-repeat: no-repeat;
-            background-position: top center;
-            background-size: cover;
-            margin: 0 auto;
-            @media screen and (min-width: $deskwidth) {
-                background-position: 0 78%;
-            }   
-        }
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: cover;
     }
-    
 }
 
 .feat-content {
@@ -69,7 +60,7 @@
     z-index: 5;
     margin-top: 125px;
     @media screen and (min-width: $tabwidth) {
-        margin-top:190px;
+        margin-top:205px;
     }
     .home-feat-text {
         width: 100%;
@@ -124,7 +115,7 @@
         text-decoration: none;
         text-transform: uppercase;
         color:#FFF;
-        padding: 10px 20px;
+        padding: 10px 20px 7px;
         border-radius: 100px;
         overflow: hidden;
         width: 90%;
@@ -362,16 +353,22 @@
     z-index: 10;
     @media screen and (min-width: $tabwidth) {
     }
-    .bg {
+    .bgwrap {
         position: absolute;
         bottom: 0;
         left: 0;
-        background-image: url('images/bottom-bg.png');
+        width: 100%;
+        height: 100%;
+        transform: scaleX(-1);
+    }
+    .shape-bottom{
+        position: relative;
         background-repeat: no-repeat;
         background-position: bottom center;
         background-attachment: scroll;
         width: 100%;
         height: 100%;
+        transform: scaleY(-1);
     }
     .section-content {
         position: absolute;
@@ -558,7 +555,8 @@
         &:hover {
             color:#FFF;
             &:before {
-                background: #5f8c25;
+                background: #000;
+                opacity: 0.25;
             }
         }
         @media screen and (min-width: $tabwidth) {

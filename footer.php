@@ -32,7 +32,7 @@
                         <div class="subscribe-form">
                             <form method="POST" action="">
                                 <div class="field">
-                                    <span class="icon">
+                                    <span class="icon fontColor-button">
                                         <svg enable-background="new 0 0 21 14" version="1.1" viewBox="0 0 21 14" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
                                             <path class="st0" d="m10.5 8.4c0.2 0 0.3 0 0.4-0.1l0.4-0.3 9.7-7.9h-0.1-20.8-0.1l10 8.2c0.2 0.1 0.3 0.1 0.5 0.1zm-10.5-7.3v11.7l7.2-5.8-7.2-5.9zm13.8 6l7.1 5.7v-11.6l-7.1 5.9zm-2.2 1.8c-0.3 0.2-0.7 0.4-1 0.4-0.4 0-0.8-0.1-1-0.4l-1.8-1.3-7.8 6.3c0 0.1 0.1 0.1 0.1 0.1h20.8c0.1 0 0.1-0.1 0.1-0.1l-7.8-6.3-1.6 1.3z"/>
                                         </svg>

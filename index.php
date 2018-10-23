@@ -26,7 +26,7 @@ $apple_store_url = get_field('apple_store_url',$home_post_id);
 ?>
 
     <div class="home-header clear">
-       <div class="bg"><div></div></div>
+        <div class="shape-top"><div></div></div>
         <div class="feat-content clear container">
             <div class="home-feat-text col">
                 <?php if($feat_text) { ?>
@@ -36,7 +36,7 @@ $apple_store_url = get_field('apple_store_url',$home_post_id);
                 <?php } ?>
                 
                 <div class="cta-button-div clear">
-                    <a class="cta-button btn1 btn-style2" href="#"><span>TRY FOR FREE</span></a>
+                    <a class="cta-button theme-btn btn1 btn-style2" href="#"><span>TRY FOR FREE</span></a>
                     <a class="cta-button btn2 btn-style2" href="#"><span>HOW IT WORKS</span></a>
                  </div>    
                 
@@ -203,11 +203,11 @@ $apple_store_url = get_field('apple_store_url',$home_post_id);
 </div>
 
 <div class="why-us-div clear wrapper">
-    <div class="bg"></div>
+    <div class="bgwrap"><div class="shape-bottom"></div></div>
     <div class="section-content">
         <div class="container clear wow fadeInRight">
             <div class="titlediv">
-                <h3>WHY<br>BAN<span>CO?</span></h3>
+                <h3>WHY<br>BAN<span class="ccolor">CO?</span></h3>
             </div>
             <div class="text">
                 <p>Lorem ipsum nunc vitae accumsan ultricies vulputate orci pulvinar, eleifend vel rhoncus velit curae phasellus dictum tincidunt, pharetra quis elit ipsum vestibulum justo laoreet ut purus augue turpis vulputate ornare a tristique egestas.Etiam donec luctus eget cras commodo sit curabitur eleifend taciti, sodales litora.</p>

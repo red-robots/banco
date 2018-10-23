@@ -114,6 +114,7 @@ body {
         display: block;
         width: 180px;
         float: left;
+        text-decoration: none;
         @media screen and (min-width: $tabwidth) {
             width: 300px;
         }
@@ -122,6 +123,15 @@ body {
             height: auto;
             float: left;
         }
+    }
+}
+.siteLogo {
+    font-size: 50px;
+    font-weight: 700;
+    color:#000;
+    text-transform: uppercase;
+    &:hover {
+        color:#000;
     }
 }
 .site-footer {

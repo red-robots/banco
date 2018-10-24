@@ -206,9 +206,6 @@ $colors = get_template_directory() . '/css/colors.json';
 $fcontent = file_get_contents( $colors ); 
 $colors = ($fcontent) ? json_decode($fcontent,true) : array(); 
 ?>
-<script type="text/javascript">
-   var colors = <?php echo ($fcontent) ? json_encode($colors):'[]'; ?>;
-</script>
 <style type="text/css">
 <?php if($colors) { foreach($colors as $name=>$hex) { ?>
     #customize-control-color_options label[for='_customize-input-color_options-radio-<?php echo $name;?>'] {

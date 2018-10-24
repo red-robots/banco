@@ -1,9 +1,8 @@
 ( function( $ ) {
-
     wp.customize( 'color_options', function( value ) {
 		value.bind( function( val ) {
             $( '.shape-top,.shape-bottom' ).attr('id','color_'+val);
-		    $('body').attr('id',val);            
+		    $('body').attr('id',val); 
             $('body.subpage #masthead').css('background-color',colors[val]);
         } );
 	} );

@@ -1,10 +1,7 @@
 <?php /* Customized CSS thru WP Admin */ 
-$default =  get_template_directory_uri() . '/images/shapes/' . get_theme_mod('color_options','navy_blue') . '.png';
-$teal = get_template_directory_uri() . '/images/shapes/teal.png';
-$green = get_template_directory_uri() . '/images/shapes/green.png';
-$red = get_template_directory_uri() . '/images/shapes/red.png';
-$navy_blue = get_template_directory_uri() . '/images/shapes/navy_blue.png';
-$orange = get_template_directory_uri() . '/images/shapes/orange.png';
+$theme = get_theme_mod('color_options','navy_blue');
+$shapesURL = get_template_directory_uri() . '/images/shapes/';
+$default =  $shapesURL . $theme . '.png';
 $footer_bg_color = get_theme_mod('footer_bg_color');
 $button_bg_color = get_theme_mod('button_bg_color');
 $button_text_color = get_theme_mod('button_text_color'); 
@@ -21,22 +18,22 @@ $content_link_color = get_theme_mod('content_link_color');
 $colors = get_template_directory() . '/css/colors.json';
 $fcontent = file_get_contents( $colors );
 $colors = ($fcontent) ? json_decode($fcontent,true) : array(); 
-$theme = get_theme_mod('color_options','navy_blue');
+
 ?>
+<script type="text/javascript">
+   var colors = <?php echo ($fcontent) ? json_encode($colors):'[]'; ?>;
+</script>
 
 <style type="text/css">
+.shape-top,
 .shape-bottom { background-image: url("<?php echo $default;?>"); }
-.shape-top { background-image: url("<?php echo $default;?>"); }
-.shape-bottom#color_teal,
-.shape-top#color_teal { background-image: url("<?php echo $teal;?>")!important; }
-.shape-bottom#color_green,
-.shape-top#color_green { background-image: url("<?php echo $green;?>")!important; }
-.shape-bottom#color_navy_blue,
-.shape-top#color_navy_blue { background-image: url("<?php echo $navy_blue;?>")!important; }
-.shape-bottom#color_orange,
-.shape-top#color_orange { background-image: url("<?php echo $orange;?>")!important; }
-.shape-bottom#color_red,
-.shape-top#color_red { background-image: url("<?php echo $red;?>")!important; }
+<?php if($colors) { foreach($colors as $name=>$hex) { ?>
+.shape-bottom#color_<?php echo $name?>,
+.shape-top#color_<?php echo $name?> {
+    background-image: url("<?php echo $shapesURL . $name . '.png';?>")!important;
+}
+<?php } } ?>
+    
 .site-footer {
     background-color: <?php echo $footer_bg_color;?>;
 }
@@ -86,7 +83,9 @@ $theme = get_theme_mod('color_options','navy_blue');
     color:<?php echo $content_link_color;?>;
 }
 
-body#theme_<?php echo $theme;?>.subpage #masthead {
-    background-color:<?php echo $colors[$theme];?>;
+<?php if($colors) { foreach($colors as $name=>$hex) { ?>
+body#theme_<?php echo $name?>.subpage #masthead {
+    background-color:<?php echo $hex;?>;
 }
+<?php } } ?>
  </style>

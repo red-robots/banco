@@ -69,7 +69,8 @@ $apple_store_url = get_field('apple_store_url',$home_post_id);
     $mid_content_subtitle = get_field('mid_content_subtitle',$home_post_id);
     //$columns_content = get_field('columns_content',$home_post_id);
 ?>
-    
+
+<?php /* 3 BOXES SECTION */ ?>
 <div class="midcontent clear container">    
     <div class="titlediv">
         <h2 class="section-title">Difference Of Our Services</h2>
@@ -145,6 +146,7 @@ $apple_store_url = get_field('apple_store_url',$home_post_id);
     
 </div>
 
+<?php /* SECOND ROW SECTION */ ?>
 <div class="midcontent clear container join-family">  
     
     <div class="top-content clear fadeInUp wow" data-wow-delay="0.5s">
@@ -202,6 +204,7 @@ $apple_store_url = get_field('apple_store_url',$home_post_id);
     <?php } ?>
 </div>
 
+<?php /* WHY US SECTION */ ?>
 <div class="why-us-div clear wrapper">
     <div class="bgwrap"><div class="shape-bottom"></div></div>
     <div class="section-content">

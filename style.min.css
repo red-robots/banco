@@ -1687,12 +1687,13 @@ a:hover,a:active{outline:0}
 button.menu-toggle{border:0;text-shadow:none;background-color:#ccc;color:#fff;box-shadow:none;width:auto;display:inline-block;border-radius:0;text-transform:uppercase;font-weight:300;font-size:20px}
 @media screen and (min-width:768px){button.menu-toggle{display:none}
 }@media screen and (min-width:768px){.menu-toggle{display:none}
-}.burger{display:block;cursor:pointer;width:50px;height:50px;position:absolute;top:-5px;right:10px;border-radius:4px;z-index:100002}
+}.burger{display:block;cursor:pointer;width:50px;height:50px;position:absolute;top:11px;right:10px;border-radius:4px;z-index:100002}
 @media screen and (min-width:768px){.burger{display:none}
 }.burger span{position:relative;margin-top:9px;margin-bottom:9px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;position:absolute;top:50%;left:50%;margin-left:-15px;margin-top:-1.5px;display:block;width:30px;height:3px;background-color:#FFF}
 .burger span:before,.burger span:after{position:absolute;content:"";width:30px;height:3px;background-color:#FFF;left:0;transition-property:background-color,-webkit-transform;-webkit-transition-property:background-color,-webkit-transform;transition-property:background-color,transform;transition-property:background-color,transform,-webkit-transform;-webkit-transition-duration:.3s;transition-duration:.3s}
 .burger span:before{top:-9px}
 .burger span:after{top:9px}
+.home .burger{top:-7px}
 .mobile-menu-open .burger span{background-color:transparent}
 .mobile-menu-open .burger span:before{-webkit-transform:translateY(9px) rotate(45deg);-ms-transform:translateY(9px) rotate(45deg);transform:translateY(9px) rotate(45deg)}
 .mobile-menu-open .burger span:after{-webkit-transform:translateY(-9px) rotate(-45deg);-ms-transform:translateY(-9px) rotate(-45deg);transform:translateY(-9px) rotate(-45deg)}
@@ -1828,7 +1829,7 @@ body{background:#FFF;font-family:'Poppins',sans-serif;font-weight:400;font-size:
 .logo{display:block;float:left;width:100%;-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
 .logo *{-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
 @media screen and (min-width:768px){.logo{width:300px}
-}.logo a{display:block;width:180px;float:left;text-decoration:none}
+}.logo a{display:block;width:165px;float:left;text-decoration:none}
 @media screen and (min-width:768px){.logo a{width:300px}
 }.logo a img{width:100%;height:auto;float:left}
 .siteLogo{font-size:50px;font-weight:700;color:#000;text-transform:uppercase}
@@ -1839,9 +1840,10 @@ body{background:#FFF;font-family:'Poppins',sans-serif;font-weight:400;font-size:
 @media screen and (min-width:768px){#masthead .container{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center}
 #masthead .logo{width:30%}
 #masthead .main-navigation{width:70%}
-}.home #masthead{position:absolute;top:0;left:0;width:100%;margin-top:30px}
+}.home #masthead{position:absolute;top:0;left:0;width:100%;margin-top:20px}
 @media screen and (min-width:768px){.home #masthead{margin-top:70px}
 }.subpage #masthead{background-color:#192031}
+.subpage #masthead .container{padding-top:20px;padding-bottom:20px}
 @media screen and (min-width:768px){.subpage #masthead .container{padding-top:20px;padding-bottom:20px}
 }.btn-style1{overflow:hidden;position:relative}
 .btn-style1:before{content:"";position:absolute;top:0;left:-1px;width:100%;height:100%;background:#383938;padding:1em 2em;-webkit-transition:-webkit-transform .2s;transition:-webkit-transform .2s;transition:transform .2s;transition:transform .2s,-webkit-transform .2s;-webkit-transform:translate3d(-100%,0,0);transform:translate3d(-100%,0,0)}

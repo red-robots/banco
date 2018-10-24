@@ -115,7 +115,7 @@ body {
 	}
     a {
         display: block;
-        width: 180px;
+        width: 165px;
         float: left;
         text-decoration: none;
         @media screen and (min-width: $tabwidth) {
@@ -177,7 +177,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    margin-top: 30px;
+    margin-top: 20px;
     @media screen and (min-width: $tabwidth) {
         margin-top: 70px;
     }
@@ -185,6 +185,8 @@ body {
 .subpage #masthead {
     background-color: $color-dark-blue;
     .container {
+        padding-top:20px;
+        padding-bottom: 20px;
         @media screen and (min-width: $tabwidth) {
             padding-top:20px;
             padding-bottom: 20px;

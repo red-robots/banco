@@ -21,6 +21,7 @@ $content_link_color = get_theme_mod('content_link_color');
 $colors = get_template_directory() . '/css/colors.json';
 $fcontent = file_get_contents( $colors );
 $colors = ($fcontent) ? json_decode($fcontent,true) : array(); 
+$theme = get_theme_mod('color_options','navy_blue');
 ?>
 
 <style type="text/css">
@@ -84,19 +85,8 @@ $colors = ($fcontent) ? json_decode($fcontent,true) : array();
 .subpage #primary .entry-content a, p a {
     color:<?php echo $content_link_color;?>;
 }
-body#theme_navy_blue.subpage #masthead {
-    background-color:<?php echo $colors['navy_color'];?>;
-}
-body#theme_teal.subpage #masthead {
-    background-color:<?php echo $colors['teal'];?>;
-}
-body#theme_green.subpage #masthead {
-    background-color:<?php echo $colors['green'];?>;
-}
-body#theme_red.subpage #masthead {
-    background-color:<?php echo $colors['red'];?>;
-}
-body#theme_orange.subpage #masthead {
-    background-color:<?php echo $colors['orange'];?>;
+
+body#theme_<?php echo $theme;?>.subpage #masthead {
+    background-color:<?php echo $colors[$theme];?>;
 }
  </style>

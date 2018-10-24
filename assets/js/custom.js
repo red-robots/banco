@@ -13,8 +13,8 @@ jQuery(document).ready(function ($) {
 	*
 	------------------------------------*/
 	$("[href]").each(function() {
-    if (this.href == window.location.href) {
-        $(this).addClass("active");
+        if (this.href == window.location.href) {
+            $(this).addClass("active");
         }
 	});
 	/*
@@ -109,5 +109,9 @@ jQuery(document).ready(function ($) {
 	*
 	------------------------------------*/
 	new WOW().init();
+    
+    $("#mobile-menu").on("click",function(){
+        $('body').toggleClass('mobile-menu-open');
+    });
 
 });// END #####################################    END

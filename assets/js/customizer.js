@@ -1,8 +1,10 @@
 ( function( $ ) {
-  wp.customize( 'color_options', function( value ) {
+
+    wp.customize( 'color_options', function( value ) {
 		value.bind( function( val ) {
             $( '.shape-top,.shape-bottom' ).attr('id','color_'+val);
-		    $('body').attr('data-theme',val);  
+		    $('body').attr('id',val);            
+            $('body.subpage #masthead').css('background-color',colors[val]);
         } );
 	} );
     
@@ -24,6 +26,18 @@
     wp.customize( 'button_text_color', function( value ) {
 		value.bind( function( val ) {
             $('.btn, input[type="submit"], button.btn, .theme-btn').css('color',val);
+        } );
+	} );
+    
+     wp.customize( 'button_text_hover_color', function( value ) {
+		value.bind( function( val ) {
+            $('.btn, input[type="submit"], button.btn, .theme-btn').hover( 
+                function() {
+                    $(this).css('color',val);
+                }, function() {
+                    $(this).css('color','');
+                }
+            );
         } );
 	} );
     
@@ -66,6 +80,18 @@
     wp.customize( 'footer_menu_text_active_color', function( value ) {
 		value.bind( function( val ) {
             $('.footer-menu .current_page_item a').css('color',val);
+        } );
+	} );
+    
+    wp.customize( 'home_title_text_color', function( value ) {
+		value.bind( function( val ) {
+            $('.section-title').css('color',val);
+        } );
+	} );
+    
+    wp.customize( 'content_link_color', function( value ) {
+		value.bind( function( val ) {
+            $('#primary .entry-content a, p a').css('color',val);
         } );
 	} );
     

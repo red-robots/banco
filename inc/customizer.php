@@ -31,6 +31,18 @@ function mytheme_customizer_options( $wp_customize ) {
         )
     );
     
+    $colors = get_template_directory() . '/css/colors.json';
+    $fcontent = file_get_contents( $colors );
+    $colors = ($fcontent) ? json_decode($fcontent,true) : array();
+    
+//'choices' => array(
+// 'navy_blue' => 'Navy Blue',
+// 'teal'  => 'Teal',
+// 'green' => 'Green',
+// 'red'   => 'Red',
+// 'orange'=> 'Orange',
+//)
+    
     $wp_customize->add_control(
         'color_options',
         array(
@@ -38,13 +50,7 @@ function mytheme_customizer_options( $wp_customize ) {
             'label' => 'Theme Color',
             'section' => 'colors',
             'settings'=> 'color_options',
-            'choices' => array(
-                'navy_blue' => 'Navy Blue',
-                'teal'  => 'Teal',
-                'green' => 'Green',
-                'red'   => 'Red',
-                'orange'=> 'Orange',
-            ),
+            'choices' => $colors
         )
     );
     
@@ -60,7 +66,7 @@ function mytheme_customizer_options( $wp_customize ) {
     ) ) );
     
     $wp_customize->add_setting( 'top_menu_text_hover_color' , array(
-        'default'     => '#8bc53f',
+        'default'     => $colors['green'],
         'transport'   => 'postMessage',
     ) );
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'top_menu_text_hover_color', array(
@@ -70,7 +76,7 @@ function mytheme_customizer_options( $wp_customize ) {
     ) ) );
     
     $wp_customize->add_setting( 'top_menu_text_active_color' , array(
-        'default'     => '#8bc53f',
+        'default'     => $colors['green'],
         'transport'   => 'postMessage',
     ) );
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'top_menu_text_active_color', array(
@@ -82,11 +88,11 @@ function mytheme_customizer_options( $wp_customize ) {
     
     /* Buttons */
     $wp_customize->add_setting( 'button_bg_color' , array(
-        'default'     => '#8bc53f',
+        'default'     => $colors['green'],
         'transport'   => 'postMessage',
     ) );
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'button_bg_color', array(
-        'label'      => 'Button Background Color',
+        'label'      => 'Button Background Color<i class="inst">(class:theme-btn)</i>',
         'section'    => 'colors',
         'settings'   => 'button_bg_color',
     ) ) );
@@ -101,6 +107,40 @@ function mytheme_customizer_options( $wp_customize ) {
         'settings'   => 'button_text_color',
     ) ) );
     
+    $wp_customize->add_setting( 'button_text_hover_color' , array(
+        'default'     => $colors['navy_blue'],
+        'transport'   => 'postMessage',
+    ) );
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'button_text_hover_color', array(
+        'label'      => 'Button HOVER Text Color',
+        'section'    => 'colors',
+        'settings'   => 'button_text_hover_color',
+    ) ) );
+    
+    /* Home section title */
+    $wp_customize->add_setting( 'home_title_text_color' , array(
+        'default'     => $colors['green'],
+        'transport'   => 'postMessage',
+    ) );
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'home_title_text_color', array(
+        'label'      => 'Home Section Title Color<i class="inst">(class:section-title)</i>',
+        'section'    => 'colors',
+        'settings'   => 'home_title_text_color',
+    ) ) );
+    
+    
+    /* Content Links */
+    $wp_customize->add_setting( 'content_link_color' , array(
+        'default'     => $colors['green'],
+        'transport'   => 'postMessage',
+    ) );
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'content_link_color', array(
+        'label'      => 'Content Link Color',
+        'section'    => 'colors',
+        'settings'   => 'content_link_color',
+    ) ) );
+    
+    
     /* Footer */
     $wp_customize->add_setting( 'footer_bg_color' , array(
         'default'     => '#212121',
@@ -113,7 +153,7 @@ function mytheme_customizer_options( $wp_customize ) {
     ) ) );
     
     $wp_customize->add_setting( 'footer_menu_text_color' , array(
-        'default'     => '#8bc53f',
+        'default'     => $colors['green'],
         'transport'   => 'postMessage',
     ) );
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_menu_text_color', array(
@@ -143,10 +183,6 @@ function mytheme_customizer_options( $wp_customize ) {
     ) ) );
 }
 
-
-/**
- * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
- */
 function banco_customize_preview_js() {
 	wp_enqueue_script( 'banco_customizer', get_template_directory_uri() . '/assets/js/customizer.js', array( 'customize-preview' ), '20181023', true );
 }
@@ -162,3 +198,23 @@ function ii_admin_style() {
   wp_enqueue_style('admin-styles', get_template_directory_uri().'/css/admin.css');
 }
 add_action('admin_enqueue_scripts', 'ii_admin_style');
+
+/* Triggered within the <head></head> section of the theme customizer screen */
+add_action('customize_controls_print_scripts', 'banco_customizer_xscripts');
+function banco_customizer_xscripts() {
+$colors = get_template_directory() . '/css/colors.json';
+$fcontent = file_get_contents( $colors ); 
+$colors = ($fcontent) ? json_decode($fcontent,true) : array(); 
+?>
+<script type="text/javascript">
+   var colors = <?php echo ($fcontent) ? json_encode($colors):'[]'; ?>;
+</script>
+<style type="text/css">
+<?php if($colors) { foreach($colors as $name=>$hex) { ?>
+    #customize-control-color_options label[for='_customize-input-color_options-radio-<?php echo $name;?>'] {
+        background:<?php echo $hex;?>;
+    }
+<?php } } ?>
+</style>
+<?php
+}

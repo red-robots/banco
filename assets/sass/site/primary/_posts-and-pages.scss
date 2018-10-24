@@ -219,7 +219,7 @@
             text-align: center;
             line-height: 1.2;
         } 
-        h2 {
+        .section-title {
             color:$color-green;
             font-size:25px;
             margin-top:3em;
@@ -674,6 +674,105 @@
         @include transition(all ease-out .2s);
         &:hover {
             color:#FFF;
+        }
+    }
+}
+.subpage .site-header.wrapper,
+.subpage .site-content.wrapper {
+    max-width: 100%;
+}
+.subpage .logo a {
+    @media screen and (min-width: $tabwidth) {
+        width: 230px;
+    }
+}
+.subpage #primary,
+.subpage #secondary {
+    padding-top:30px;
+    padding-bottom: 30px;
+}
+.subpage #primary {
+    .entry-title {
+        margin-top: 0;
+        font:{
+            size:30px;
+            weight:500;
+        }
+    }
+    .entry-content a {
+        color:$color-green;
+    }
+}
+.widget-area {
+    .widget {
+        border-bottom: 1px dotted #CCC;
+        padding-bottom: 20px;
+        margin-bottom: 15px;
+        position: relative;
+    }
+    .widget-title {
+        margin: 0 0;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font: {
+            size: 16px;
+            weight: 400;
+        }
+    }
+    .search-form {
+        position: relative;
+        width: 100%;
+        .search-field {
+            width: 100%;
+            border-radius: 100px;
+            line-height: 40px;
+            height: 40px;
+            padding: 3px 40px 3px 15px;
+            box-sizing: border-box;
+            outline: 0;
+            -webkit-appearance:none;
+            @include transition(all ease-out .3s);
+            &:focus {
+                box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.2);
+            }
+        }
+        .search-submit {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 3;
+            text-indent: -999em;
+            height: 100%;
+            width: 38px;
+            padding: 0 0;
+            visibility: hidden;
+        }
+        label {
+            position: relative;
+            &:before,
+            &:after {
+                content:"";
+                display: block;
+                position: absolute;
+                z-index: 2;
+                opacity: 0.7;
+            }
+            &:before {
+                width:18px;
+                height:18px;
+                border-radius: 100px;
+                border:2px solid #CCC;
+                top: 0;
+                right: 15px;
+            }
+            &:after {
+                width: 2px;
+                height: 7px;
+                background: #CCC;
+                top: 15px;
+                right: 15px;
+                transform: rotate(-45deg);
+            }
         }
     }
 }

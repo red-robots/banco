@@ -77,9 +77,8 @@ body {
 .content-area {
 	width: 100%;
 	margin: 0px auto;
-	
 	@media screen and (min-width: $tabwidth) {
-		width: 66%;
+		width: 68%;
 		float: left;
 		margin: 0;
 	}
@@ -93,7 +92,7 @@ body {
 	margin: 0px auto;
 	
 	@media screen and (min-width: $tabwidth) {
-		width: 26%;
+		width: 28%;
 		float: right;
 		margin: 0;
 	}
@@ -107,6 +106,10 @@ body {
 	display: block;
     float: left;
     width: 100%;
+    @include transition(all ease-out .3s);
+    * {
+        @include transition(all ease-out .3s);
+    }
 	@media screen and (min-width: $tabwidth) {
 		width: 300px;
 	}
@@ -152,9 +155,8 @@ body {
 #masthead {
     position: relative;
     z-index: 100;
-    margin-top: 30px;
+    margin-top: 0;
     @media screen and (min-width: $tabwidth) {
-        margin-top: 70px;
         .container {
             display: flex;
             justify-content: center;
@@ -175,6 +177,19 @@ body {
     top: 0;
     left: 0;
     width: 100%;
+    margin-top: 30px;
+    @media screen and (min-width: $tabwidth) {
+        margin-top: 70px;
+    }
+}
+.subpage #masthead {
+    background-color: $color-dark-blue;
+    .container {
+        @media screen and (min-width: $tabwidth) {
+            padding-top:20px;
+            padding-bottom: 20px;
+        }
+    }
 }
 
 .btn-style1 {
@@ -213,6 +228,7 @@ body {
     -webkit-appearance:none;
     outline:none;
     box-shadow: none;
+    cursor: pointer;
     @include transition(all ease-out .3s);
     &:before {
         content: '';

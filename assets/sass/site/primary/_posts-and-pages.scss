@@ -681,6 +681,9 @@
 .subpage .site-content.wrapper {
     max-width: 100%;
 }
+.subpage .site-content.wrapper {
+    min-height: 30em;
+}
 .subpage .logo a {
     @media screen and (min-width: $tabwidth) {
         width: 230px;

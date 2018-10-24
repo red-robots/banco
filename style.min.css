@@ -1998,6 +1998,7 @@ body{background:#FFF;font-family:'Poppins',sans-serif;font-weight:400;font-size:
 .foot-menu a{text-decoration:none;color:#8bc53f;font-size:13px;font-weight:500;letter-spacing:1px;padding-left:10px;padding-right:7px;-webkit-transition:all ease-out .2s;transition:all ease-out .2s}
 .foot-menu a:hover{color:#FFF}
 .subpage .site-header.wrapper,.subpage .site-content.wrapper{max-width:100%}
+.subpage .site-content.wrapper{min-height:30em}
 @media screen and (min-width:768px){.subpage .logo a{width:230px}
 }.subpage #primary,.subpage #secondary{padding-top:30px;padding-bottom:30px}
 .subpage #primary .entry-title{margin-top:0;font-size:30px;font-weight:500}

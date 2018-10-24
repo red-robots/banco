@@ -26,7 +26,7 @@ $apple_store_url = get_field('apple_store_url',$home_post_id);
 ?>
 
     <div class="home-header clear">
-        <div class="shape-top"><div></div></div>
+        <div class="shape-top"><div class="overlay"></div></div>
         <div class="feat-content clear container">
             <div class="home-feat-text col">
                 <?php if($feat_text) { ?>

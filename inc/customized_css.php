@@ -25,15 +25,6 @@ $colors = ($fcontent) ? json_decode($fcontent,true) : array();
 </script>
 
 <style type="text/css">
-.shape-top,
-.shape-bottom { background-image: url("<?php echo $default;?>"); }
-<?php if($colors) { foreach($colors as $name=>$hex) { ?>
-.shape-bottom#color_<?php echo $name?>,
-.shape-top#color_<?php echo $name?> {
-    background-image: url("<?php echo $shapesURL . $name . '.png';?>")!important;
-}
-<?php } } ?>
-    
 .site-footer {
     background-color: <?php echo $footer_bg_color;?>;
 }
@@ -83,9 +74,18 @@ $colors = ($fcontent) ? json_decode($fcontent,true) : array();
     color:<?php echo $content_link_color;?>;
 }
 
+.shape-top, .shape-bottom { background-image: url("<?php echo $default;?>"); }
 <?php if($colors) { foreach($colors as $name=>$hex) { ?>
 body#theme_<?php echo $name?>.subpage #masthead {
     background-color:<?php echo $hex;?>;
+}
+body#theme_<?php echo $name?> #site-navigation-mobile.main-navigation:before {
+    background-color:<?php echo $hex;?>;
+}
+
+.shape-bottom#color_<?php echo $name?>,
+.shape-top#color_<?php echo $name?> {
+    background-image: url("<?php echo $shapesURL . $name . '.png';?>")!important;
 }
 <?php } } ?>
  </style>

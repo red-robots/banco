@@ -36,8 +36,12 @@ $apple_store_url = get_field('apple_store_url',$home_post_id);
                 <?php } ?>
                 
                 <div class="cta-button-div clear">
-                    <a class="cta-button theme-btn btn1 btn-style2" href="#"><span>TRY FOR FREE</span></a>
-                    <a class="cta-button btn2 btn-style2" href="#"><span>HOW IT WORKS</span></a>
+                    <?php if( $button_1_link &&  $button_1_text ) { ?>
+                    <a class="cta-button theme-btn btn1 btn-style2" href="<?php echo $button_1_link; ?>"><span><?php echo $button_1_text; ?></span></a>
+                    <?php } ?>
+                    <?php if( $button_2_link &&  $button_2_text ) { ?>
+                    <a class="cta-button btn2 btn-style2" href="<?php echo $button_2_link; ?>"><span><?php echo $button_1_text; ?>"></span></a>
+                    <?php } ?>
                  </div>    
                 
                 <div class="appurl clear flexbox">

@@ -46,22 +46,26 @@ $apple_store_url = get_field('apple_store_url',$home_post_id);
                 
                 <div class="appurl clear flexbox">
                     <span class="btnwrap b1">
+                        <?php if($google_play_url) { ?>
                         <a href="#" target="_blank">
                             <img src="<?php bloginfo('template_url'); ?>/images/btn_google.png" alt="Google Play">
                         </a>
+                        <?php } ?>
                     </span>
                     
                     <span class="btnwrap b2">
+                        <?php if($apple_store_url) { ?>
                         <a href="#" target="_blank">
                             <img src="<?php bloginfo('template_url'); ?>/images/btn_apple.png" alt="Apple Store">
                         </a>
+                        <?php } ?>
                     </span>
                 </div>
             </div>
             <div class="home-feat-image col">
                 <?php if($feat_image) { ?>
                 <div class="imgwrap">
-                    <img src="<?php echo $feat_image;?>" alt="" />
+                    <img src="<?php echo $feat_image['url'];?>" alt="<?php echo $feat_image['title'];?>" />
                 </div>
                 <?php } ?>
             </div>
@@ -69,43 +73,29 @@ $apple_store_url = get_field('apple_store_url',$home_post_id);
     </div>
 
 <?php
-    $mid_content_title = get_field('mid_content_title',$home_post_id);
-    $mid_content_subtitle = get_field('mid_content_subtitle',$home_post_id);
-    //$columns_content = get_field('columns_content',$home_post_id);
+    $box_content_title = get_field('box_content_title',$home_post_id);
+    $box_content_subtitle = get_field('box_content_subtitle',$home_post_id);
+    $boxes_contents = get_field('boxes_contents',$home_post_id);
+    $box_bottom_button_text = get_field('box_bottom_button_text',$home_post_id);
+    $box_bottom_button_link = get_field('box_bottom_button_link',$home_post_id);
 ?>
 
 <?php /* 3 BOXES SECTION */ ?>
 <div class="midcontent clear container">    
     <div class="titlediv">
-        <h2 class="section-title">Difference Of Our Services</h2>
+        <?php if($box_content_title) { ?>
+        <h2 class="section-title"><?php echo $box_content_title;?></h2>
+        <?php } ?>
+        <?php if($box_content_subtitle) { ?>
         <h3 class="mid-title wow fadeIn">
-            Benefits you can get<br>
-            Through registering today!
+           <?php echo $box_content_subtitle;?>
         </h3>
+        <?php } ?>
     </div>
     
-    <?php 
-    $columns_content[] = array(
-                'column_icon'   => get_bloginfo('template_url') . "/images/icons/01-icon.png",
-                'column_title'  => 'Maximise your duty refunds',
-                'column_text'   => '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fringilla, nulla nec laoreet rutrum, augue tellus ultrices augue, sit amet vulputate tortor nisi eget.</p>'
-            );
-    
-    $columns_content[] = array(
-                'column_icon'   => get_bloginfo('template_url') . "/images/icons/02-icon.png",
-                'column_title'  => 'Import data with interactive graphs',
-                'column_text'   => '<p>Neque donec vivamus mi malesuada ornare lobortis feugiat semper senectus fermentum per aliquet fermentum, velit dapibus euismod mi senectus potenti in vulputate iaculis.</p>'
-            );
-    
-    $columns_content[] = array(
-                'column_icon'   => get_bloginfo('template_url') . "/images/icons/03-icon.png",
-                'column_title'  => 'Your data is secure with us',
-                'column_text'   => '<p>Placerat risus eros gravida cubilia potenti metus class pellentesque lectus blandit, donec aptent fermentum condimentum interdum aliquam nulla consectetur</p>'
-            );
-    
-    
-    if($columns_content) { 
-        $countCol = count($columns_content); 
+    <?php  
+    if($boxes_contents) { 
+        $countCol = count($boxes_contents); 
         $colClass = 'three';
         if($countCol % 3 == 0)  {
             $colClass = 'three';
@@ -117,7 +107,7 @@ $apple_store_url = get_field('apple_store_url',$home_post_id);
         
         ?>
         <div class="columns clear <?php echo $colClass?>">
-            <?php $ctr=1; foreach($columns_content as $arr) { 
+            <?php $ctr=1; foreach($boxes_contents as $arr) { 
                 $c_title = $arr['column_title'];
                 $c_text = $arr['column_text'];
                 $c_icon = $arr['column_icon'];
@@ -144,45 +134,47 @@ $apple_store_url = get_field('apple_store_url',$home_post_id);
         </div>
     <?php } ?>
     
+    <?php if($box_bottom_button_text && $middle_button_link) { ?>
     <div class="midbuttondiv text-center clear">
-        <a href="#" class="theme-btn btn-style2"><span>Register Now!</span></a>
+        <a href="<?php echo $middle_button_link;?>" class="theme-btn btn-style2"><span><?php echo $middle_button_text;?></span></a>
     </div>
+    <?php } ?>
     
 </div>
 
-<?php /* SECOND ROW SECTION */ ?>
+<?php
+    /* JOIN US SECTION */
+    $join_title = get_field('join_title',$home_post_id);
+    $join_text = get_field('join_text',$home_post_id);
+?>
+
 <div class="midcontent clear container join-family">  
     
     <div class="top-content clear fadeInUp wow" data-wow-delay="0.5s">
+        <?php if($join_title) { ?>
         <div class="titlediv">
-            <h2 class="section-title">Join the family</h2>
+            <h2 class="section-title"><?php echo $join_title;?></h2>
         </div>
+        <?php } ?>
+        
+        <?php if($join_text) { ?>
         <div class="textcontent">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fringilla, nulla nec laoreet rutrum, augue tellus ultrices augue, sit amet vulputate tortor nisi eget mauris. Nam commodo eget leo blandit varius. Nunc laoreet justo eu felis ornare, gravida ultrices neque porttitor. Pellentesque accumsan, tellus vel ornare mollis, risus nunc.</p>
+            <?php echo $join_text;?>
         </div>
+        <?php } ?>
     </div>
     
     
     <?php
-    $articles[] = array(
-            'article_title'=>'Personal Identification 1',
-            'article_content'=>'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fringilla, nulla nec laoreet rutrum, augue tellus ultrices augue, sit amet vulputate tortor nisi eget mauris. Nam commodo eget leo blandit varius. Nunc laoreet justo eu felis ornare, gravida ultrices neque porttitor. Pellentesque accumsan, tellus vel ornare mollis.',
-            'article_image'=> get_bloginfo('template_url') . "/images/sample.png"
-        );
-
-    $articles[] = array(
-            'article_title'=>'Personal Identification 2',
-            'article_content'=>'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fringilla, nulla nec laoreet rutrum, augue tellus ultrices augue, sit amet vulputate tortor nisi eget mauris. Nam commodo eget leo blandit varius. Nunc laoreet justo eu felis ornare, gravida ultrices neque porttitor. Pellentesque accumsan, tellus vel ornare mollis.',
-            'article_image'=> get_bloginfo('template_url') . "/images/sample.png"
-        );
+    $excerpts_list = get_field('join_information',$home_post_id);
     ?>
     
-    <?php if($articles) { ?>
+    <?php if($excerpts_list) { ?>
     <div class="article-columns clear">
-        <?php $j=1; foreach($articles as $a) { 
-            $a_title = $a['article_title'];
-            $a_text = $a['article_content'];
-            $a_img = $a['article_image']; 
+        <?php $j=1; foreach($excerpts_list as $a) { 
+            $a_title = $a['title'];
+            $a_text = $a['text'];
+            $a_img = $a['image']; 
             $delay = $j*2;
             ?>
             <div class="a-column wow fadeIn <?php echo ($j % 2 == 0) ? 'even':'odd';  ?>" data-wow-delay="0.<?php echo $delay;?>s">
@@ -208,18 +200,25 @@ $apple_store_url = get_field('apple_store_url',$home_post_id);
     <?php } ?>
 </div>
 
-<?php /* WHY US SECTION */ ?>
+<?php /* WHY US SECTION */ 
+$why_title = get_field('why_title',$home_post_id);
+$why_text = get_field('why_text',$home_post_id);
+?>
 <div class="why-us-div clear wrapper">
     <div class="bgwrap"><div class="shape-bottom"></div></div>
     <div class="section-content">
         <div class="container clear wow fadeInRight">
+            <?php if($why_title) { ?>
             <div class="titlediv">
-                <h3>WHY<br>BAN<span class="ccolor">CO?</span></h3>
+                <h3><?php echo $why_title;?></h3>
             </div>
+            <?php } ?>
+            
+            <?php if($why_text) { ?>
             <div class="text">
-                <p>Lorem ipsum nunc vitae accumsan ultricies vulputate orci pulvinar, eleifend vel rhoncus velit curae phasellus dictum tincidunt, pharetra quis elit ipsum vestibulum justo laoreet ut purus augue turpis vulputate ornare a tristique egestas.Etiam donec luctus eget cras commodo sit curabitur eleifend taciti, sodales litora.</p>
-                <p>Sem quisque class ligula facilisis est ultrices consequat netus torquent, suspendisse taciti bibendum varius eros per etiam semper accumsan eu, ornare egestas diam ultrices pellentesque faucibus ac lacinia. Aliquet accumsan curae nibh porttitor tellus luctus hac, phasellus.</p>
+                <?php echo $why_text;?>
             </div>
+            <?php } ?>
         </div>
     </div>
 </div>

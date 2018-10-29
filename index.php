@@ -134,9 +134,9 @@ $apple_store_url = get_field('apple_store_url',$home_post_id);
         </div>
     <?php } ?>
     
-    <?php if($box_bottom_button_text && $middle_button_link) { ?>
+    <?php if($box_bottom_button_text && $box_bottom_button_link) { ?>
     <div class="midbuttondiv text-center clear">
-        <a href="<?php echo $middle_button_link;?>" class="theme-btn btn-style2"><span><?php echo $middle_button_text;?></span></a>
+        <a href="<?php echo $box_bottom_button_link;?>" class="theme-btn btn-style2"><span><?php echo $box_bottom_button_text;?></span></a>
     </div>
     <?php } ?>
     
